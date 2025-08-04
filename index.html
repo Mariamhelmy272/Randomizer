@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Redirect</title>
+  <script>
+    window.onload = function () {
+      // List of your Google Form links
+      const surveyLinks = [
+        "https://forms.gle/TDhigaiWttMPG2Ys8",
+        "https://forms.gle/WDVTKwbrjgJmRquNA",
+        "https://forms.gle/KhZZBbnYZoRCPDbA9",
+        "https://forms.gle/ut966gxKjpoh3apT8"
+      ];
+
+      // Randomly select one link
+      const randomIndex = Math.floor(Math.random() * surveyLinks.length);
+      const selectedLink = surveyLinks[randomIndex];
+
+      // Redirect the user to the selected link
+      window.location.href = selectedLink;
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the survey... If nothing happens, <a id="manualLink" href="#">click here</a>.</p>
+  <script>
+    // Fallback link in case auto redirect fails
+    document.getElementById('manualLink').href = selectedLink;
+  </script>
+</body>
+</html>
