@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomized Survey Redirect</title>
+  <script>
+    window.onload = function () {
+      // Add your Google Form URLs here
+      const surveyLinks = [
+        "https://forms.gle/TDhigaiWttMPG2Ys8",
+        "https://forms.gle/WDVTKwbrjgJmRquNA",
+        "https://forms.gle/KhZZBbnYZoRCPDbA9",
+        "https://forms.gle/ut966gxKjpoh3apT8"
+      ];
+
+      // Randomly select one of the links
+      const randomIndex = Math.floor(Math.random() * surveyLinks.length);
+      const selectedLink = surveyLinks[randomIndex];
+
+      // Redirect the user
+      window.location.href = selectedLink;
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the survey...</p>
+</body>
+</html>
