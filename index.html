@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <title>Survey Redirect</title>
   <script>
+    // Define survey links globally so both scripts can use them
+    const surveyLinks = [
+      "https://forms.gle/DbLMzUS59ikLyQ6V8", // C1
+      "https://forms.gle/XDiPozYEaMCrDmUJ7", // C2
+      "https://forms.gle/JerS1oKj8HgEZuddA", // C3
+      "https://forms.gle/E5UTxskHk4MEsG9B6", // C4
+      "https://forms.gle/RThKzBxnKM7wXeFQ6", // C5
+      "https://forms.gle/5yzDELwJZ2vc8jsB7", // C6
+      "https://forms.gle/F4UtVGyYrVYWgXpj7", // C7
+      "https://forms.gle/UKpXTSCzL7Q59G3e7"  // C8
+    ];
+
+    // Pick random link
+    const randomIndex = Math.floor(Math.random() * surveyLinks.length);
+    const selectedLink = surveyLinks[randomIndex];
+
+    // Redirect when page loads
     window.onload = function () {
-      // List of your Google Form links
-      const surveyLinks = [
-        "https://forms.gle/aYS7tzwMfub86yTbA",
-        "https://forms.gle/YU5sU95QrqzVGXto7",
-        "https://forms.gle/nTqec4gNE6C2pEvC8"
-      ];
-
-      // Randomly select one link
-      const randomIndex = Math.floor(Math.random() * surveyLinks.length);
-      const selectedLink = surveyLinks[randomIndex];
-
-      // Redirect the user to the selected link
       window.location.href = selectedLink;
     };
   </script>
@@ -24,7 +29,7 @@
 <body>
   <p>Redirecting you to the survey... If nothing happens, <a id="manualLink" href="#">click here</a>.</p>
   <script>
-    // Fallback link in case auto redirect fails
+    // Add fallback clickable link
     document.getElementById('manualLink').href = selectedLink;
   </script>
 </body>
